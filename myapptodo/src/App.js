@@ -23,7 +23,7 @@ const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__f
     appId: "1:753824598095:web:7f985a0eccc09ce807423a"
 };
 const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-const BACKEND_API_URL = 'http://localhost:3000'; // Updated to match backend port
+const BACKEND_API_URL = 'https://todosbackend.vercel.app/'; // Updated to match backend port
 
 function App() {
   // State for Firebase instances, user, todos, and UI interactions
