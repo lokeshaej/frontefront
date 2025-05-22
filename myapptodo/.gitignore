@@ -2,9 +2,8 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
+<<<<<<< HEAD
 # testing
 /coverage
 
@@ -20,3 +19,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+=======
+>>>>>>> b6e1824be9206553164a36bdeda1cc7b87dad8c6
