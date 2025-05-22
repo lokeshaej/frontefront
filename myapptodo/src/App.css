@@ -1,0 +1,458 @@
+/* Basic Reset & Font */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Using Inter as per instructions */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0418f4;
+}
+
+/* Header Styles */
+.app-header-container {
+  width: 100%;
+  
+  background-color:#1f7686; /* gray-800 */
+  color: #ffffff;
+  padding: 0.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 0px;
+  
+}
+
+.app-header-container h1 {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700; /* font-bold */
+  margin-left: 0px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main App Container */
+.app-container {
+  min-height: 100vh;
+  background-color: #05d3f7; /* gray-100 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0rem; /* p-4 */
+  box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+/* Main Content Card */
+.content-card {
+  position: relative;
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  /*p-6*/border-radius: 0.5rem;
+  /*rounded-lg*/box-shadow: 0 10px 15px -3px rgba(11, 11, 11, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /*shadow-xl*/width: 100%;
+  max-width: 42rem;
+  /*max-w-2xl*/margin-top: 1.5rem;
+  /*Addsomespacefromtheheader*/margin-bottom: 1.5rem;
+   /* Add some space before the footer */
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+/* Header */
+.app-header {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  text-align: center;
+}
+
+/* User ID Display */
+.user-id-display {
+  font-size: 0.875rem; /* text-sm */
+  color: #4b5563; /* gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+  text-align: center;
+}
+
+.user-id-value {
+  font-family: monospace;
+  /*font-mono*/background-color: #e5e7eb;
+  /*gray-200*/padding: 0.25rem 0.5rem;
+  /*px-2py-1*/border-radius: 0.25rem;
+   /* rounded */
+}
+
+/* Add New Todo Section */
+.add-todo-section {
+  display: flex;
+  flex-direction: column; /* sm:flex-row */
+  gap: 0.5rem; /* gap-2 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .add-todo-section {
+    flex-direction: row;
+  }
+}
+
+.add-todo-input {
+  flex-grow: 1; /* flex-grow */
+  padding: 0.75rem; /* p-3 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  outline: none; /* focus:outline-none */
+}
+.add-todo-input:focus {
+  border-color: #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .add-todo-input.text-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .add-todo-input.date-time-input {
+    border-radius: 0;
+  }
+}
+
+.add-todo-button {
+  padding: 0.75rem 1.5rem;
+  /*px-6py-3*/background-color: #2563eb;
+  /*bg-blue-600*/color: #ffffff;
+  border-radius: 0.5rem;
+  /*rounded-lg*/font-weight: 600;
+  /*font-semibold*/transition: background-color 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+}
+.add-todo-button:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+.add-todo-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-blue-500 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .add-todo-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* space-x-4 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.filter-button {
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-weight: 600; /* font-semibold */
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #374151; /* gray-700 */
+}
+.filter-button:hover {
+  background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+.filter-button.active {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* NEW: Specific styles for the toggle button based on state */
+.toggle-visibility-button.show-list {
+  color: #16A34A; /* green-700 */
+}
+.toggle-visibility-button.hide-list {
+  color: #DC2626; /* red-600 */
+}
+
+/* Hover styles for the toggle button */
+.toggle-visibility-button.show-list:hover {
+  background-color:  #EF4444; /* green-600 */
+  color: #ffffff;
+}
+.toggle-visibility-button.hide-list:hover {
+  background-color: #10B981; /* red-500 */
+  color: #ffffff;
+}
+
+/* NEW: Hover styles for active filter buttons (Pending and Completed) */
+.filter-button.active.pending-filter:hover {
+  background-color: #DC2626; /* red-600 */
+  color: #ffffff; /* Ensure text remains white on hover */
+}
+
+.filter-button.active.completed-filter:hover {
+  background-color: #16A34A; /* green-700 */
+  color: #ffffff; /* Ensure text remains white on hover */
+}
+
+
+/* Todo List */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.todo-list-empty {
+  text-align: center;
+  color: #6b7280; /* gray-500 */
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9fafb; /* gray-50 */
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+  border: 1px solid #e5e7eb; /* border border-gray-200 */
+  margin-bottom: 0.75rem; /* space-y-3 */
+}
+.todo-item:last-child {
+  margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.todo-content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.todo-checkbox {
+  height: 1.25rem; /* h-5 */
+  width: 1.25rem; /* w-5 */
+  color: #2563eb; /* text-blue-600 */
+  border-radius: 0.25rem; /* rounded */
+  outline: none; /* focus:ring-blue-500 */
+  cursor: pointer;
+  border: 1px solid #6b7280; /* default checkbox border */
+  appearance: none; /* Hide default checkbox */
+  -webkit-appearance: none;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.todo-checkbox:checked {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+.todo-checkbox:checked::after {
+  content: '✓'; /* Checkmark */
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+
+.todo-text {
+  flex-grow: 1;
+  margin-left: 0.75rem; /* ml-3 */
+  font-size: 1.125rem; /* text-lg */
+  color: #1f2937; /* gray-800 */
+  word-break: break-word; /* Prevent long words from overflowing */
+}
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #6b7280; /* gray-500 */
+}
+
+.todo-due-date {
+  margin-left: 0.5rem; /* ml-2 */
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* gray-500 */
+}
+
+/* Edit Mode Inputs */
+.edit-todo-inputs {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 0.5rem; /* gap-2 */
+  width: 100%;
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .edit-todo-inputs {
+    flex-direction: row;
+  }
+}
+
+.edit-todo-input {
+  flex-grow: 1;
+  padding: 0.5rem; /* p-2 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  border-radius: 0.375rem; /* rounded-md */
+  outline: none;
+}
+.edit-todo-input:focus {
+  border-color: #60a5fa; /* focus:ring-1 focus:ring-blue-400 */
+  box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.5);
+}
+
+/* Action Buttons Container */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* ml-auto */
+  margin-top: 0.5rem; /* mt-2 */
+  gap: 0.5rem; /* space-x-2 */
+}
+@media (min-width: 640px) { /* sm breakpoint */
+  .action-buttons {
+    margin-top: 0;
+  }
+}
+
+.action-button {
+  padding: 0.5rem; /* p-2 */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  display: flex; /* To center SVG */
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem; /* Add some rounding for hover effect */
+}
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.action-button.summarize-button { color: #d97706; /* yellow-600 */ }
+.action-button.summarize-button:hover { color: #b45309; /* yellow-800 */ }
+
+.action-button.slack-button { color: #4f46e5; /* indigo-600 */ }
+.action-button.slack-button:hover { color: #3730a3; /* indigo-800 */ }
+
+.action-button.edit-button { color: #2563eb; /* blue-600 */ }
+.action-button.edit-button:hover { color: #1d4ed8; /* blue-800 */ }
+
+.action-button.delete-button { color: #dc2626; /* red-600 */ }
+.action-button.delete-button:hover { color: #991b1b; /* red-800 */ }
+
+/* SVG Icons */
+.action-button svg {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Individual Summary/Message Display */
+.individual-summary {
+  margin-top: 0.5rem; /* mt-2 */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm or text-xs */
+  width: 100%;
+  background-color: #f3f4f6; /* gray-100 */
+  border: 1px solid #d1d5db; /* border border-gray-300 */
+  color: #374151; /* gray-700 */
+  position: relative; /* For close button positioning */
+}
+.individual-summary .font-semibold {
+  font-weight: 600;
+}
+/* Style for bullet points within the summary */
+.individual-summary ul {
+  list-style-type: disc; /* Default disc bullet */
+  margin-left: 1.25rem; /* Indent the list */
+  padding-left: 0;
+  margin-top: 0.25rem; /* Space above the list */
+}
+.individual-summary li {
+  margin-bottom: 0.25rem; /* Space between list items */
+}
+
+.close-summary-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280; /* gray-500 */
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.close-summary-button:hover {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #374151; /* gray-700 */
+}
+
+
+.individual-slack-message {
+  margin-top: 0.5rem; /* mt-2 */
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm or text-xs */
+  width: 100%;
+}
+.individual-slack-message.success {
+  background-color: #d1fae5; /* green-100 */
+  color: #065f46; /* green-800 */
+}
+.individual-slack-message.error {
+  background-color: #fee2e2; /* red-100 */
+  color: #991b1b; /* red-800 */
+}
+
+/* Loading Container */
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6; /* gray-100 */
+  padding: 1rem;
+}
+
+.loading-text {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #374151; /* gray-700 */
+}
+
+/* Footer Styles */
+.app-footer-container {
+  width: 100%;
+  background-color: #1f2937; /* gray-800 */
+  color: #9ca3af; /* gray-400 */
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.875rem; /* text-sm */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: auto; /* Pushes footer to the bottom */
+}
